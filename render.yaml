@@ -19,7 +19,7 @@ render:
             value: {{ env.STRING_SESSION }}
           - key: DATABASE_URL
             value: {{ env.DATABASE_URL }}
-          - PYTHON_VERSION
+          - key: PYTHON_VERSION
             value: {{ env.PYTHON_VERSION | default("3.10.6") }}
         readyCheck:
           path: /
