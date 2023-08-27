@@ -6,20 +6,21 @@ services:
         port: 8080
         envVars:
           - key: ABUSE
-            value: Render
+            value: False
           - key: APP_ID
-            value: {{ env.APP_ID }}
+            sync: false
           - key: API_HASH
-            value: {{ env.API_HASH }}
+            sync: false
           - key: BOT_TOKEN
-            value: {{ env.BOT_TOKEN }}
+            sync: false
           - key: ENV
-            value: {{ env.ENV }}
+            sync: false
+            value: ANYTHING
           - key: STRING_SESSION
-            value: {{ env.STRING_SESSION }}
+            sync: false
           - key: DATABASE_URL
             property: database
-            value: {{ env.DATABASE_URL }}
+            sync: false
           - key: PYTHON_VERSION
             value: {{ env.PYTHON_VERSION | default("3.10.6") }}
         readyCheck:
