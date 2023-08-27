@@ -22,7 +22,8 @@ services:
             property: database
             sync: false
           - key: PYTHON_VERSION
-            value: {{ env.PYTHON_VERSION | default("3.10.6") }}
+            value: 3.10.6
+            sync: false
         readyCheck:
           path: /
           status: 200
