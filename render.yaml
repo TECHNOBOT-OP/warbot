@@ -1,27 +1,28 @@
-services:
-  - type: web
-    plan: free
-    name: War
-    env: python
-    buildCommand: pip install -U -r requirements.txt
-    startCommand: python3 server.py & bash warbot
-    repo: https://github.com/TECHNOBOT-OP/warbot   
-    branch: master
-    envVars:
-      - key: ABUSE
-        sync: false
-      - key: APP_ID
-        sync: false
-      - key: API_HASH
-        sync: false
-      - key: BOT_TOKEN
-        sync: false
-      - key: ENV
-        sync: false
-      - key: STRING_SESSION
-        sync: false
-      - key: DATABASE_URL
-        sync: false
-      - key: PYTHON_VERSION
-        sync: false
-    autoDeploy: false
+render:
+  - version: 1
+    services:
+      - type: web
+        name: WarBot
+        port: 8080
+        envVars:
+          - key: ABUSE
+            value: Render
+          - key: APP_ID
+            value: {{ env.APP_ID }}
+          - key: API_HASH
+            value: {{ env.API_HASH }}
+          - key: BOT_TOKEN
+            value: {{ env.BOT_TOKEN }}
+          - key: ENV
+            value: {{ env.ENV }}
+          - key: STRING_SESSION
+            value: {{ env.STRING_SESSION }}
+          - key: DATABASE_URL
+            value: {{ env.DATABASE_URL }}
+          - PYTHON_VERSION
+            value: {{ env.PYTHON_VERSION | default("3.10.6") }}
+        readyCheck:
+          path: /
+          status: 200
+        buildCommand: pip3 install -r -U requirements.txt
+        startCommand: python3 server.py & bash warbot
