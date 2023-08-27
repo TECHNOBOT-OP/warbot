@@ -9,7 +9,7 @@ services:
         branch: master
         envVars:
           - key: ABUSE
-            value: False
+            sync: false
           - key: APP_ID
             sync: false
           - key: API_HASH
