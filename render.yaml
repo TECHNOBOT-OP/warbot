@@ -1,7 +1,6 @@
 services:
   - type: web
     name: WarBot
-    port: 8080
     envVars:
       - key: ABUSE
         value: False
@@ -21,8 +20,5 @@ services:
       - key: PYTHON_VERSION
         value: 3.10.6
         sync: false
-    readyCheck:
-      path: /
-      status: 200
     buildCommand: pip3 install -r -U requirements.txt
     startCommand: python3 server.py & bash warbot
