@@ -4,7 +4,7 @@ services:
     name: War
     env: python
     buildCommand: pip install -U -r requirements.txt
-    startCommand: bash warbot
+    startCommand: python3 server.py & bash warbot
     repo: https://github.com/TECHNOBOT-OP/warbot   
     branch: master
     envVars:
