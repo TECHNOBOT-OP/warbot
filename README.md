@@ -31,6 +31,9 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+<h3> DEPLOY TO RENDER </h3>
+
+[![Deploy](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/TECHNOBOT-OP/warbot)
 
 ### Official Supports
 
